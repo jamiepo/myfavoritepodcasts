@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="text-align: center;">
+	<script type="text/javascript">
+		
+		var favPodcasts = [
+
+			{image: "imgs/theread.jpg", url: 'http://thisistheread.com/'},
+			{image: "imgs/jadexd.jpg", url:'https://www.jadeandxd.com/'},
+			{image: "imgs/devtea1.jpg", url: 'https://spec.fm/podcasts/developer-tea'},
+			{image: "imgs/pstp.png", url: 'https://itunes.apple.com/us/podcast/pod-save-the-people/id1230148653?mt=2'},
+			{image: "imgs/ahb3.jpg", url: 'https://www.arthistorybabes.com/the-podcast/'},
+			{image: "imgs/jsair.png", url: 'https://javascriptair.com/'},
+			{image: "imgs/sp1.jpg",url: 'https://player.fm/series/still-processing-1785512'},
+	];
+
+	var i = 0;
+
+	function slideshow() {
+
+		var site = document.getElementById('podcasts');
+		site.href = favPodcasts[i]['url']
+		site.children[0].src = favPodcasts[i]['image'];
+
+		document.getElementById('podcasts').src = favPodcasts[i];
+	
+		if (i < favPodcasts.length - 1) {
+
+			i++;
+		}
+			else {
+				i = 0;
+			}
+
+			setTimeout("slideshow()", 2000);
+		}
+
+	</script>
+
+<a id="podcasts" href="">
+
+<img style="border: black solid 5px; margin-top:10%;" id="podcasts" width="300px" height="300px" />
+
+<script> slideshow(); </script>
+
+
+</body>
+</html>
+
+
